@@ -147,10 +147,37 @@ class LinkedList{
             counter++;
         }
         
-        console.log(counter);
+        
         return counter;
     }
 
+    //Read
+    getNode(position){
+        let temp = this.head;
+        let counter = 1;
+
+        if(position == 1){
+            console.log(temp);
+            return temp;
+        }
+
+        if(position == list1.size()){
+            while(temp != null){
+                temp = temp.next;
+            }
+
+            console.log(temp);
+            return temp;
+        }
+
+        while(temp != null && position > counter) {
+            counter++;
+            temp = temp.next;
+        }
+
+        console.log(temp);
+        return temp;
+    }
 
 }
 
@@ -232,6 +259,7 @@ list2.addToHead("Roman");
 list2.removeAtPosition(2);
 list2.removeAtPosition(4);
 list2.removeAtPosition(1);
+list2.addAtPosition("Wilmer", 3);
 
 line();
 line();
@@ -239,6 +267,11 @@ line();
 
 
 list2.printListData();
+
+line();
+
+
+list2.getNode(1)
 
 
 
