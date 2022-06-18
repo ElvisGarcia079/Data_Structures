@@ -131,11 +131,19 @@ public class LinkedList {
 		
 		if(this.head == null) {
 			throw new Error("There is nothing to remove, your list is empty.");
+			return;
 		}
 		
 		if(position == 1) {
 			this.clear();
+			return;
 		}
+		
+		if(position >= this.size()) {
+			this.removeTail();
+		}
+		
+		
 		
 		for(int i = 0; i < position - 2; i++) {
 			tempHead = tempHead.next;
