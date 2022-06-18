@@ -3,6 +3,9 @@ import elvis.practice.*;
 
 public class App {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		LinkedList list1 = new LinkedList(new Node("Elvis"));
@@ -54,6 +57,11 @@ public class App {
 		list1.removeTail();
 		line();
 		line();
+		list1.printListData();
+		line();
+		line();
+		list1.removeAtPosition(4);
+		list1.removeAtPosition(3);
 		list1.printListData();
 		
 		
