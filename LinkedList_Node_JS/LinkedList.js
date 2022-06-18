@@ -232,6 +232,7 @@ let list1 = new LinkedList(new Node(4));
 
 list1.addAtPosition("Elvis", 2);
 list1.addAtPosition("Linda", 1);
+list1.addAtPosition(new Water(), 2)
 list1.printList();
 line();
 line();
