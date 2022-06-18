@@ -126,6 +126,18 @@ public class LinkedList {
 		newNode.next = temp;
 	}
 	
+	public void removeAtPosition(int position) {
+		Node tempHead = this.head;
+		
+		for(int i = 0; i < position - 2; i++) {
+			tempHead = tempHead.next;
+		}
+		
+		System.out.println(tempHead);
+		tempHead.next = tempHead.next.next;
+		
+	}
+	
 	public int size() {
 		Node tempHead = this.getHead();
 		int counter = 0;
