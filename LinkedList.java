@@ -1,5 +1,7 @@
 package elvis.practice.linkedlist;
 
+import java.util.ArrayList;
+
 public class LinkedList {
 	
 	private Node head;
@@ -166,6 +168,24 @@ public class LinkedList {
 	
 	public void clear() {
 		this.head = null;
+	}
+	
+	public void reverse() {
+		//What is this arr containing... The data... Which can be anything, it's Object type
+		ArrayList<Object> dataToAdd = new ArrayList<Object>();
+		
+		Node tempHead = this.head;
+		Node newBeginning = this.head;
+		
+		while(tempHead != null) {
+			dataToAdd.add(tempHead.data);
+			tempHead = tempHead.next;
+		}
+		
+		while(newBeginning.next != null) {
+			newBeginning.data = dataToAdd.get((0));
+			newBeginning = newBeginning.next;
+		}
 	}
 	
 	
