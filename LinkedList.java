@@ -131,7 +131,7 @@ public class LinkedList {
 		
 		if(this.head == null) {
 			throw new Error("There is nothing to remove, your list is empty.");
-			return;
+			
 		}
 		
 		if(position == 1) {
