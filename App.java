@@ -66,6 +66,12 @@ public class App {
 		list1.removeAtPosition(5);
 		list1.removeAtPosition(19);
 		list1.printListData();
+		line();
+		line();
+		
+		list1.printListData();
+		list1.reverse();
+		list1.printListData();
 		
 		
 	}

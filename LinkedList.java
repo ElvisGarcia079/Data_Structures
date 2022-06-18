@@ -176,16 +176,20 @@ public class LinkedList {
 		
 		Node tempHead = this.head;
 		Node newBeginning = this.head;
+		int counter = 0;
 		
 		while(tempHead != null) {
 			dataToAdd.add(tempHead.data);
 			tempHead = tempHead.next;
 		}
-		
-		while(newBeginning.next != null) {
-			newBeginning.data = dataToAdd.get((0));
+	
+		while(newBeginning != null) {
+			newBeginning.data = dataToAdd.get(dataToAdd.size() - 1);
+			dataToAdd.remove(dataToAdd.size() - 1);
 			newBeginning = newBeginning.next;
 		}
+		
+		
 	}
 	
 	
