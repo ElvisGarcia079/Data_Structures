@@ -63,6 +63,8 @@ public class App {
 		list1.removeAtPosition(4);
 		list1.removeAtPosition(3);
 		list1.printListData();
+		list1.removeAtPosition(5);
+		list1.printListData();
 		
 		
 	}

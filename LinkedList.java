@@ -141,9 +141,8 @@ public class LinkedList {
 		
 		if(position >= this.size()) {
 			this.removeTail();
+			return;
 		}
-		
-		
 		
 		for(int i = 0; i < position - 2; i++) {
 			tempHead = tempHead.next;
