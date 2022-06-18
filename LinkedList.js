@@ -2,8 +2,8 @@ const Node = require("./Node");
 const Water = require("./Water");
 
 class LinkedList{
+  //Create
 
-    //Create
     constructor(head){
         if(!(head instanceof Node)){
             throw new Error("Must include a Node Object");
@@ -179,7 +179,49 @@ class LinkedList{
         return temp;
     }
 
-}
+    //High level: - Linda Idea
+        // Traverse through entire list
+        // Take each value and we are going to unshift [to put in front] it to an array
+        // By the time we get to the end of the LL we have an array with the values reversed
+        // Traverse thorugh linkedlist again, assign this node's data with the current data in the array.
+
+        //O(n) - Time
+        //O(n) - Space
+    reverse(){
+        let arr = [];
+       
+        let currentNode = this.head;
+        let anotherBeginning = this.head;
+
+        while(currentNode != null){
+            arr.unshift(currentNode.data);
+            currentNode = currentNode.next;
+        }
+        
+        while(anotherBeginning != null){
+            anotherBeginning.data = arr[0];
+            arr.shift();
+            anotherBeginning = anotherBeginning.next; 
+        }
+        
+        console.log(this)
+        return this;
+
+    }
+
+    //We have two pointers.
+       // We get the size
+           // Helps determine how many times we need to repeat some sort of loop that 
+           //keeps swapping until we hit the center. Then everything is reversed. 
+
+        reverse2(){
+        
+        }
+    }
+    
+
+
+
 
 function line(){
     console.log("===================")
@@ -188,90 +230,14 @@ function line(){
 let list1 = new LinkedList(new Node(4));
 
 
-//Test 1: PrintList after Creation
-// list1.printList();
-
-//Test 2: Add To Head and PrintList
-list1.addToHead("Elvis Garcia");
-list1.addToHead("Omar Garcia");
-list1.addToHead(new Water().getType());
-// list1.printList();
-
-//Test 3: Add To Tail and PrintList
-list1.addToTail("Kenya Villamar");
-//list1.printList();
-
-//Test 4: Remove Head and PrintList
-list1.removeHead();
-list1.removeHead();
-//list1.printList();
-
-//Test 5: Remove Tail and PrintList
-list1.removeTail();
-list1.removeTail();
-//list1.printList();
-
-//Test 6: Get Size of List
-// console.log(list1);
-list1.addToHead(new Water().getType());
-list1.addToHead("Seth Freakin' Rollins")
-list1.removeHead();
-// console.log(list1);
-// list1.size();
-
-//Test 7: Clear the List, Print, and Get Size
-list1.clear();
-//list1.size();
-list1.addToHead("Test Test")
-//list1.size();
-// list1.printList();
-
-//Test 8: Add at position
-list1.addAtPosition("Some Data", 1);
-list1.addAtPosition("Elvis Garcia", 1);
-list1.addAtPosition("Omar Garcia", list1.size());
-list1.addAtPosition("Luna", 4);
-//list1.size();
-//list1.printListData();
-
-//Test 9: Clear List Again
-list1.clear();
-list1.printListData();
-//list1.size();
-
-//Test 10: Create New LinkedList
-let list2 = new LinkedList(new Node("First Node"));
-//list2.printList();
-
+list1.addAtPosition("Elvis", 2);
+list1.addAtPosition("Linda", 1);
+list1.printList();
 line();
 line();
-line();
-
-list2.clear();
-
-list2.addAtPosition("Elvis", 100);
-list2.addAtPosition("Omar", 1);
-list2.addAtPosition("Eddie", 2);
-list2.addAtPosition("Kenya", 4);
-list2.addAtPosition("Seth", 2);
-list2.addToHead("Roman");
-
-list2.removeAtPosition(2);
-list2.removeAtPosition(4);
-list2.removeAtPosition(1);
-list2.addAtPosition("Wilmer", 3);
-
-line();
-line();
-line();
+list1.reverse().printList();
 
 
-list2.printListData();
-
-line();
-
-
-list2.getNode(1)
 
 
 
