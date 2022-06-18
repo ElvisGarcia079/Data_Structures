@@ -129,6 +129,14 @@ public class LinkedList {
 	public void removeAtPosition(int position) {
 		Node tempHead = this.head;
 		
+		if(this.head == null) {
+			throw new Error("There is nothing to remove, your list is empty.");
+		}
+		
+		if(position == 1) {
+			this.clear();
+		}
+		
 		for(int i = 0; i < position - 2; i++) {
 			tempHead = tempHead.next;
 		}
