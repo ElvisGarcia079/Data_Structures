@@ -187,37 +187,43 @@ class LinkedList{
 
         //O(n) - Time
         //O(n) - Space
-    reverse(){
-        let arr = [];
+    // reverse(){
+    //     let arr = [];
        
-        let currentNode = this.head;
-        let anotherBeginning = this.head;
+    //     let currentNode = this.head;
+    //     let anotherBeginning = this.head;
 
-        while(currentNode != null){
-            arr.unshift(currentNode.data);
-            currentNode = currentNode.next;
-        }
+    //     while(currentNode != null){
+    //         arr.unshift(currentNode.data);
+    //         currentNode = currentNode.next;
+    //     }
         
-        while(anotherBeginning != null){
-            anotherBeginning.data = arr[0];
-            arr.shift();
-            anotherBeginning = anotherBeginning.next; 
-        }
+    //     while(anotherBeginning != null){
+    //         anotherBeginning.data = arr[0];
+    //         arr.shift();
+    //         anotherBeginning = anotherBeginning.next; 
+    //     }
         
-        console.log(this)
-        return this;
+    //     console.log(this)
+    //     return this;
 
+    // }
+
+    reverse(){
+        let previous = null;
+        let next = null;
+        let current = this.head;
+        while(current != null){
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+
+        return previous;
     }
 
-    //We have two pointers.
-       // We get the size
-           // Helps determine how many times we need to repeat some sort of loop that 
-           //keeps swapping until we hit the center. Then everything is reversed. 
-
-        reverse2(){
-        
-        }
-    }
+ }
     
 
 
@@ -236,7 +242,9 @@ list1.addAtPosition(new Water(), 2)
 list1.printList();
 line();
 line();
-list1.reverse().printList();
+console.log(list1.reverse())
+
+
 
 
 
